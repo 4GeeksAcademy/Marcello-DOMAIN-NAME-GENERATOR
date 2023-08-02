@@ -7,23 +7,17 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  let who = ["The dog", "My grandma", "His turtle", "My bird"];
-  let action = ["ate", "peed", "crushed", "broke"];
-  let what = ["my homework", "the keys", "the car"];
-  let when = [
-    "before the class",
-    "right on time",
-    "when I finished",
-    "during my lunch",
-    "while I was praying"
-  ];
-
-  const randomIndexWho = Math.floor(Math.random() * who.length);
-  const randomIndexAction = Math.floor(Math.random() * action.length);
-  const randomIndexWhat = Math.floor(Math.random() * what.length);
-  const randomIndexWhen = Math.floor(Math.random() * when.length);
-  let phrase = `${who[randomIndexWho]} ${action[randomIndexAction]} ${what[randomIndexWhat]} ${when[randomIndexWhen]}`;
-
+  let pronoun = ["the", "our"];
+  let adj = ["great", "big"];
+  let noun = ["jogger", "racoon"];
+  let phrase = "";
+  for (let i = 0; i < pronoun.length; i++) {
+    for (let y = 0; y < adj.length; y++) {
+      for (let x = 0; x < noun.length; x++) {
+        phrase += `<div>${pronoun[i]}${adj[y]}${noun[x]}.com</div>`;
+      }
+    }
+  }
   const targeHeading = document.querySelector("#excuse");
-  targeHeading.textContent = phrase;
+  targeHeading.innerHTML = phrase;
 };
